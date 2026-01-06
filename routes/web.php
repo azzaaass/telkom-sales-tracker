@@ -5,6 +5,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PresenceController;
 use App\Http\Controllers\VisitController;
+use App\Http\Controllers\DealsController;
+use App\Http\Controllers\HistoryController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -20,9 +22,6 @@ Route::post('/login', [AuthController::class, 'login'])->name('login.store');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::middleware('auth')->group(function () {
-    // Route::get('/dashboard', function () {
-    //     return view('user.dashboard');
-    // })->name('dashboard');
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
@@ -32,4 +31,11 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/visit', [VisitController::class, 'index'])->name('visit');
     Route::post('/visit', [VisitController::class, 'store'])->name('visit.store');
+
+    Route::get('/deals', [DealsController::class, 'index'])->name('deals');
+    Route::post('/deals', [DealsController::class, 'store'])->name('deals.store');
+
+    Route::get('/history', [HistoryController::class, 'index'])->name('history');
+    Route::post('/history', [HistoryController::class, 'store'])->name('history.store');
+
 });
