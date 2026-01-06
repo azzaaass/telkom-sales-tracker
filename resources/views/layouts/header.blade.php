@@ -49,15 +49,15 @@
            Tambah Visit
         </a>
 
-        {{-- <a href="{{ route('deals.index') }}" 
+        <a href="{{ route('deals') }}" 
            class="{{ request()->routeIs('deals.*') ? 'text-[#ed1c24] border-b-2 border-[#ed1c24] font-bold' : 'text-gray-500 hover:text-[#ed1c24] font-medium' }} pb-4 px-1 text-sm transition-colors">
            Deal Closing
-        </a> --}}
+        </a>
 
-        {{-- <a href="{{ route('history.index') }}" 
+        <a href="{{ route('history') }}" 
            class="{{ request()->routeIs('history.*') ? 'text-[#ed1c24] border-b-2 border-[#ed1c24] font-bold' : 'text-gray-500 hover:text-[#ed1c24] font-medium' }} pb-4 px-1 text-sm transition-colors">
            History
-        </a> --}}
+        </a>
     </div>
 </div>
 </nav>
